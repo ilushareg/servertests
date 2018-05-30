@@ -33,7 +33,8 @@ namespace serverCLI
             // Establish the local endpoint for the socket.  
             // The DNS name of the computer  
             // running the listener is "host.contoso.com".  
-            IPHostEntry ipHostInfo = Dns.GetHostEntry("localhost"/*Dns.GetHostName()*/);
+            //IPHostEntry ipHostInfo = Dns.GetHostEntry("localhost"/*Dns.GetHostName()*/);
+            IPHostEntry ipHostInfo = ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
             
             //uncomment for global address so others can connect
             if (false)
