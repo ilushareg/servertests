@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/ServerCLINetCore.csproj"
+                "${workspaceFolder}/server/server.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

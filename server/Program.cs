@@ -3,8 +3,9 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using shared;
 
-namespace serverCLI
+namespace serverCLI 
 {
     // State object for reading client data asynchronously  
     public class StateObject
@@ -33,13 +34,10 @@ namespace serverCLI
             // Establish the local endpoint for the socket.  
             // The DNS name of the computer  
             // running the listener is "host.contoso.com".  
-            IPHostEntry ipHostInfo = Dns.GetHostEntry("localhost"/*Dns.GetHostName()*/);
+            //IPHostEntry ipHostInfo = Dns.GetHostEntry("localhost"/*Dns.GetHostName()*/);
+            IPHostEntry ipHostInfo = ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
             
             //uncomment for global address so others can connect
-            if (false)
-            {
-                ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
-            }
             foreach (IPAddress ip in ipHostInfo.AddressList)
             {
                 Console.WriteLine(ip.ToString());
@@ -171,6 +169,9 @@ namespace serverCLI
 
         public static int Main(String[] args)
         {
+            Entity a = new Entity();
+            int n = a.pow(10);
+
             StartListening();
             return 0;
         }
