@@ -111,9 +111,11 @@ namespace serverCLI
 
             if (bytesRead > 0)
             {
-                // There  might be more data, so store the data received so far.  
-                state.sb.Append(Encoding.ASCII.GetString(
-                    state.buffer, 0, bytesRead));
+                // There  might be more data, so store the data received so far.
+                string tmp = Encoding.ASCII.GetString(state.buffer, 0, bytesRead);
+                Console.WriteLine("aaa = " + tmp);
+                
+                state.sb.Append(tmp);
 
                 // Check for end-of-file tag. If it is not there, read   
                 // more data.  
@@ -153,7 +155,7 @@ namespace serverCLI
                 // Retrieve the socket from the state object.  
                 Socket handler = (Socket)ar.AsyncState;
 
-                // Complete sending the data to the remote device.  
+                // Complete sending the data to the remote device.      
                 int bytesSent = handler.EndSend(ar);
                 Console.WriteLine("Sent {0} bytes to client.", bytesSent);
 
