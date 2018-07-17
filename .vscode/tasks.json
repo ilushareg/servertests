@@ -20,6 +20,16 @@
                 "${workspaceFolder}/client/client.csproj"
             ],
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/client/client.csproj"
+            ],
+            "problemMatcher": "$msCompile"
         }
 
     ]
