@@ -4,9 +4,10 @@ using System.Net.Sockets;
 using System.Threading;  
 using System.Text;  
 
-public class AsynchronousClient {  
+public class AsynchronousClient {
 
-    private static System.Net.IPAddress remoteIPAddress = IPAddress.Parse("172.16.6.11");
+//    private static System.Net.IPAddress remoteIPAddress = IPAddress.Parse("172.16.6.11");
+    private static System.Net.IPAddress remoteIPAddress = IPAddress.Parse("192.168.1.108");
     private static int remotePort = 5555;
     private static int localPort = 5000;
 
