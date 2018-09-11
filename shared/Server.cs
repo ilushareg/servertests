@@ -13,16 +13,18 @@ namespace shared.Net
 
         Server()
         {
-
+            StartListening(5000);
         }
 
         public void StartListening(int port)
         {
             if (client != null)
+            {
                 throw new Exception("Server port already creeated");
-
+            }
+            
             client = new UdpClient(port);
-
+            
 
 
         }
