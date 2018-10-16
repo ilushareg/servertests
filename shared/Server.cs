@@ -24,9 +24,23 @@ namespace shared.Net
             }
             
             client = new UdpClient(port);
+
             
 
 
+        }
+
+        public void Stop()
+        {
+            if(client != null)
+            {
+                client.Close();
+                client = null;
+            } 
+            else 
+            {
+                throw new Exception("Can't stop server it's not running");
+            }
         }
 
     }
